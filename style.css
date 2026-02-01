@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap');
+
+* {
+    padding: 0px 0px;
+    margin: 0px 0px;
+    font-family: "Cinzel", serif;
+    box-sizing: border-box;
+}
+
+
+body,
+html {
+    background-color: #161616;
+    overflow-x: hidden;
+    color: white;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+}
+
+.progressbar {
+    position: fixed;
+    top: 0;
+    left: 85%;
+    background: rgba(255, 255, 255, 0.4);
+    width: 1px;
+    z-index: 1;
+}
+
+.navigationWrapper ul {
+    margin-top: 250px;
+    list-style: none;
+    margin-left: 100px;
+    position: absolute;
+    margin-bottom: 200px;
+
+
+}
+
+.navigationItem {
+    display: block;
+    margin: 120px 0
+}
+
+a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 150px;
+    font-weight: 500;
+}
+
+span {
+    position: relative;
+    display: block;
+
+}
+
+.navigationItem span::before {
+    width: 0;
+    color: white;
+    overflow: hidden;
+    position: absolute;
+    content: attr(data-text);
+    transition: all 1s cubic-bezier(0.84, 0, 0.08, 0.99);
+
+
+}
+
+.navigationItem span:hover:before {
+    width: 100%
+}
+
+.project-preview-wrapper {
+    width: 100%;
+    position: fixed;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.project-preview {
+    position: fixed;
+    height: 400px;
+    top: 12%;
+    left: 50%;
+    width: 0;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+}
+
+@media (max-width:900px) {
+
+    .progressbar,
+    .project-preview-wrapper {
+        display: none;
+    }
+
+    a {
+        font-size: 24px;
+    }
+}

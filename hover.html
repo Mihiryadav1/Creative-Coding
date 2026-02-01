@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<!-- JQuery -->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+
+<!-- TweenMax - GSAP -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.11.4/TweenMax.min.js"></script>
+<script>
+
+    $(document).ready(function () {
+        TweenMax.set(".project-preview", { width: 0 });
+
+        var tl = new TimelineLite();
+
+        $(document)
+            .on("mouseover", ".navigationItem", function (evt) {
+                tl = new TimelineLite();
+                tl.to($(".project-preview"), 1, {
+                    width: "600px",
+                    ease: Expo.easeInOut
+                });
+            })
+            .on("mouseout", ".navigationItem", function (evt) {
+                tl = new TimelineLite();
+                tl.to($(".project-preview"), 0.5, {
+                    width: 0,
+                    ease: Expo.easeInOut
+                });
+            });
+        $(".navigation-link-1").hover(function () {
+            $(".project-preview").css({ "background-image": "url(spain.jpg)" });
+        });
+
+        $(".navigation-link-2").hover(function () {
+            $(".project-preview").css({ "background-image": "url(italy.jpg)" });
+        });
+
+        $(".navigation-link-3").hover(function () {
+            $(".project-preview").css({ "background-image": "url(scotland.jpg)" });
+        });
+
+        $(".navigation-link-4").hover(function () {
+            $(".project-preview").css({ "background-image": "url(buddapest.jpg)" });
+        });
+
+        $(".navigation-link-5").hover(function () {
+            $(".project-preview").css({ "background-image": "url(london.jpg)" });
+        });
+
+        $(".navigation-link-6").hover(function () {
+            $(".project-preview").css({ "background-image": "url(birmingham.jpg)" });
+        });
+    });
+
+
+    $(window).scroll(function () {
+        var scroll = $(window).scrollTop(),
+            dh = $(document).height(),
+            wh = $(window).height();
+        scrollPercent = (scroll / (dh - wh)) * 100;
+        $(".progressbar").css("height", scrollPercent + "%");
+    });
+</script>
+
+<body>
+    <div class="navigationWrapper">
+        <div class="project-preview-wrapper">
+            <div class="project-preview">
+            </div>
+        </div>
+        <ul class="navigationList">
+            <li class="navigationItem">
+                <a href="" class="navigation-link navigation-link-1">
+                    <span data-text="Spain">Spain</span>
+                </a>
+            </li>
+            <li class="navigationItem">
+                <a href="" class="navigation-link navigation-link-2">
+                    <span data-text="Italy">Italy</span>
+                </a>
+            </li>
+            <li class="navigationItem">
+                <a href="" class="navigation-link navigation-link-3">
+                    <span data-text="Scotland">Scotland</span>
+                </a>
+            </li>
+            <li class="navigationItem">
+                <a href="" class="navigation-link navigation-link-4">
+                    <span data-text="Buddapest">Buddapest</span>
+                </a>
+            </li>
+            <li class="navigationItem">
+                <a href="" class="navigation-link navigation-link-5">
+                    <span data-text="London">London</span>
+                </a>
+            </li>
+            <li class="navigationItem">
+                <a href="" class="navigation-link navigation-link-6">
+                    <span data-text="Birmingham">Birmingham</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="progressbar"></div>
+
+</body>
+
+</html>
