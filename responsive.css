@@ -1,0 +1,128 @@
+@media screen and (max-width: 1000px) {
+    body {
+        position: relative;
+    }
+
+    nav {
+        /* background-color: red; */
+
+    }
+
+    .menu {
+        display: none;
+    }
+
+    .btn-primary {
+        display: none;
+    }
+
+    .icon-bar {
+        display: block !important;
+    }
+
+    .icon {
+        font-size: 2rem;
+        color: var(--white);
+    }
+
+    .menu-responsive {
+        /* display: block; */
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(13px);
+        -webkit-backdrop-filter: blur(10.1px);
+        height: 100dvh;
+        position: absolute;
+        z-index: 1000;
+        padding: 1rem;
+        border-radius: 1rem;
+        top: 0;
+        width: 100%;
+        border-radius: 1rem;
+
+        & div {
+            text-align: right;
+        }
+
+        & li {
+            display: flex;
+            flex-direction: column;
+
+        }
+
+        & li a {
+            height: 10vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            color: var(--white);
+            font-weight: 500;
+            /* background-color: yellow; */
+
+        }
+    }
+
+    /* Hero css */
+
+    .hero {
+
+        & h1 {
+            font-size: 10vw;
+
+        }
+
+    }
+
+
+    /* About css */
+    .about {
+        grid-template-columns: repeat(1, 1fr);
+        padding: 1rem 0;
+
+        & .right {
+            display: none;
+            visibility: hidden;
+
+        }
+
+        & .left {
+
+            padding: 1rem;
+
+            & h2 {
+                font-size: 10vw;
+            }
+
+            & .para {
+                width: 100%;
+
+            }
+        }
+
+    }
+
+    .trips {
+        padding: 1rem;
+    }
+
+
+
+    .banner>.banner-top {
+        grid-template-columns: 1fr;
+        row-gap: 1rem;
+
+        & h3 {
+            font-size: 10vw;
+        }
+
+    }
+
+    .banner-bottom {
+
+        margin-top: 1rem;
+
+    }
+
+
+
+}
